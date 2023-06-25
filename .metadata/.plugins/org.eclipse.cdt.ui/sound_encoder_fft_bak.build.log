@@ -1,0 +1,28 @@
+22:00:25 **** Incremental Build of configuration Debug for project sound_encoder_fft_bak ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/ring_buffer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DDEBUG -DSTM32L496xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I"/home/klukomski/workspace/stm32/CMSIS/CMSIS/Include" -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/ring_buffer.d" -MT"Drivers/ring_buffer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/ring_buffer.o"
+arm-none-eabi-gcc "../Drivers/rsam.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DDEBUG -DSTM32L496xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I"/home/klukomski/workspace/stm32/CMSIS/CMSIS/Include" -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/rsam.d" -MT"Drivers/rsam.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/rsam.o"
+In file included from ../Drivers/rsam.c:8:0:
+../Drivers/rsam.h:17:2: error: unknown type name 'arm_rfft_fast_instance_f32'
+  arm_rfft_fast_instance_f32 hrfft;
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/ring_buffer.c:10:1: error: two or more data types in declaration specifiers
+ void ring_buffer_init(ring_buffer_t* self, void* memory_p, int length);
+ ^~~~
+../Drivers/rsam.h:23:26: error: 'RSAM_' undeclared here (not in a function); did you mean 'RSAM_H_'?
+  float      workdata_fft[RSAM_ FFT_LENGTH*2];
+                          ^~~~~
+                          RSAM_H_
+../Drivers/rsam.h:23:32: error: expected ']' before 'FFT_LENGTH'
+  float      workdata_fft[RSAM_ FFT_LENGTH*2];
+                                ^~~~~~~~~~
+../Drivers/rsam.h:26:2: error: unknown type name 'uint32_t'
+  uint32_t     workdata_maxmag_idx;
+  ^~~~~~~~
+make: *** [Drivers/subdir.mk:21: Drivers/ring_buffer.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Drivers/subdir.mk:23: Drivers/rsam.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+22:00:26 Build Failed. 8 errors, 0 warnings. (took 738ms)
+

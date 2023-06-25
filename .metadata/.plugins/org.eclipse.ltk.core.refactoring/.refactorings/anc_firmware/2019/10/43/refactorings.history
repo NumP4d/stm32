@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;anc_firmware/anc_firmware.elf (1).cfg&apos; to &apos;anc_firmware.elf (1)_user.cfg&apos;" description="Rename resource &apos;anc_firmware.elf (1).cfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="anc_firmware.elf (1).cfg" name="anc_firmware.elf (1)_user.cfg" stamp="1572027266268" updateReferences="true"/>
+</session>

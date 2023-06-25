@@ -1,0 +1,24 @@
+02:59:41 **** Incremental Build of configuration Release for project stm32-anc ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/anc_algorithm.c" -mcpu=cortex-m4 -std=gnu11 '-DHSE_VALUE=16000000' '-DLSI_VALUE=32000' '-DHSE_STARTUP_TIMEOUT=100' '-DHSI_VALUE=16000000' '-DLSE_STARTUP_TIMEOUT=5000' '-DLSE_VALUE=32768' -DSTM32F405xx '-DDATA_CACHE_ENABLE=1' '-DEXTERNAL_CLOCK_VALUE=12288000' '-DVDD_VALUE=3300' '-DINSTRUCTION_CACHE_ENABLE=1' -DUSE_FULL_LL_DRIVER '-DPREFETCH_ENABLE=1' -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -Werror -fstack-usage -MMD -MP -MF"Src/anc_algorithm.d" -MT"Src/anc_algorithm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/anc_algorithm.o"
+arm-none-eabi-gcc "../Src/anc_application.c" -mcpu=cortex-m4 -std=gnu11 '-DHSE_VALUE=16000000' '-DLSI_VALUE=32000' '-DHSE_STARTUP_TIMEOUT=100' '-DHSI_VALUE=16000000' '-DLSE_STARTUP_TIMEOUT=5000' '-DLSE_VALUE=32768' -DSTM32F405xx '-DDATA_CACHE_ENABLE=1' '-DEXTERNAL_CLOCK_VALUE=12288000' '-DVDD_VALUE=3300' '-DINSTRUCTION_CACHE_ENABLE=1' -DUSE_FULL_LL_DRIVER '-DPREFETCH_ENABLE=1' -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -Werror -fstack-usage -MMD -MP -MF"Src/anc_application.d" -MT"Src/anc_application.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/anc_application.o"
+arm-none-eabi-gcc "../Src/anc_offline_identification.c" -mcpu=cortex-m4 -std=gnu11 '-DHSE_VALUE=16000000' '-DLSI_VALUE=32000' '-DHSE_STARTUP_TIMEOUT=100' '-DHSI_VALUE=16000000' '-DLSE_STARTUP_TIMEOUT=5000' '-DLSE_VALUE=32768' -DSTM32F405xx '-DDATA_CACHE_ENABLE=1' '-DEXTERNAL_CLOCK_VALUE=12288000' '-DVDD_VALUE=3300' '-DINSTRUCTION_CACHE_ENABLE=1' -DUSE_FULL_LL_DRIVER '-DPREFETCH_ENABLE=1' -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -Werror -fstack-usage -MMD -MP -MF"Src/anc_offline_identification.d" -MT"Src/anc_offline_identification.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/anc_offline_identification.o"
+arm-none-eabi-gcc "../Src/lnlms.c" -mcpu=cortex-m4 -std=gnu11 '-DHSE_VALUE=16000000' '-DLSI_VALUE=32000' '-DHSE_STARTUP_TIMEOUT=100' '-DHSI_VALUE=16000000' '-DLSE_STARTUP_TIMEOUT=5000' '-DLSE_VALUE=32768' -DSTM32F405xx '-DDATA_CACHE_ENABLE=1' '-DEXTERNAL_CLOCK_VALUE=12288000' '-DVDD_VALUE=3300' '-DINSTRUCTION_CACHE_ENABLE=1' -DUSE_FULL_LL_DRIVER '-DPREFETCH_ENABLE=1' -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -Werror -fstack-usage -MMD -MP -MF"Src/lnlms.d" -MT"Src/lnlms.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/lnlms.o"
+arm-none-eabi-gcc -o "stm32-anc.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/klukomski/workspace/stm32/stm32-anc/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32-anc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32-anc.elf
+ 
+arm-none-eabi-objdump -h -S  stm32-anc.elf  > "stm32-anc.list"
+arm-none-eabi-size   stm32-anc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67244	    492	 120608	 188344	  2dfb8	stm32-anc.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32-anc.list
+ 
+02:59:49 **** Incremental Build of configuration Release for project stm32-anc ****
+make -j4 all 
+arm-none-eabi-size   stm32-anc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67244	    492	 120608	 188344	  2dfb8	stm32-anc.elf
+Finished building: default.size.stdout
+ 

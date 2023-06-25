@@ -1,0 +1,10 @@
+13:52:05 **** Incremental Build of configuration Debug for project sound_encoder_fft ****
+make -j4 all 
+arm-none-eabi-size   sound_encoder_fft.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 111940	     20	  76844	 188804	  2e184	sound_encoder_fft.elf
+Finished building: default.size.stdout
+ 
+
+13:52:05 Build Finished. 0 errors, 0 warnings. (took 741ms)
+

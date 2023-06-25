@@ -1,0 +1,4 @@
+ring_buffer.c:14:6:ring_buffer_init	0	static
+ring_buffer.c:21:6:ring_buffer_push	8	static
+ring_buffer.c:28:6:ring_buffer_push_convert	0	static
+ring_buffer.c:38:6:ring_buffer_cpy_to	16	static

@@ -1,0 +1,24 @@
+14:17:25 **** Incremental Build of configuration Debug for project ChwytakNucleoL76 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L476xx -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:88:6: warning: unused variable 'gripper_pwm' [-Wunused-variable]
+  int gripper_pwm = 25;
+      ^~~~~~~~~~~
+../Src/main.c:84:7: warning: unused variable 'uartbuf' [-Wunused-variable]
+  char uartbuf[200];
+       ^~~~~~~
+arm-none-eabi-gcc -o "ChwytakNucleoL76.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/klukomski/workspace/stm32/ChwytakNucleoL76/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ChwytakNucleoL76.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ChwytakNucleoL76.elf
+ 
+arm-none-eabi-objdump -h -S  ChwytakNucleoL76.elf  > "ChwytakNucleoL76.list"
+arm-none-eabi-size   ChwytakNucleoL76.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20496	     20	   1860	  22376	   5768	ChwytakNucleoL76.elf
+Finished building: default.size.stdout
+ 
+Finished building: ChwytakNucleoL76.list
+ 
+
+14:17:26 Build Finished. 0 errors, 2 warnings. (took 1s.249ms)
+

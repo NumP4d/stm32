@@ -1,0 +1,10 @@
+02:59:49 **** Incremental Build of configuration Release for project stm32-anc ****
+make -j4 all 
+arm-none-eabi-size   stm32-anc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67244	    492	 120608	 188344	  2dfb8	stm32-anc.elf
+Finished building: default.size.stdout
+ 
+
+02:59:50 Build Finished. 0 errors, 0 warnings. (took 776ms)
+

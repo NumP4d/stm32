@@ -1,0 +1,84 @@
+/*
+ * anc_cmd.h
+ *
+ *  Created on: Sep 8, 2020
+ *      Author: klukomski
+ */
+
+#ifndef ANC_CMD_H_
+#define ANC_CMD_H_
+
+#include "anc_gain.h"
+
+#include <string.h>
+#include <stdlib.h>
+
+typedef enum
+{
+    ANC_CMD_WRONG_CMD,
+    ANC_CMD_START,
+    ANC_CMD_STOP,
+    ANC_CMD_SET_GAINS,
+    ANC_CMD_IDENTIFICATION
+} anc_cmd_t;
+
+#define ANC_CMD_START_STR           "start"
+#define ANC_CMD_STOP_STR            "stop"
+#define ANC_CMD_SET_GAINS_STR       "set-gains"
+#define ANC_CMD_IDENTIFICATION_STR  "identification"
+
+anc_cmd_t anc_cmd_decode(const char* const cmd, uint8_t** retCmdData)
+{
+    static uint8_t cmdData[128];
+
+    retCmdData = NULL;
+
+    if (strncmp(cmd, ANC_CMD_START_STR, strlen(ANC_CMD_START_STR)) == 0)
+    {
+        return ANC_CMD_START;
+    }
+
+    if (strncmp(cmd, ANC_CMD_STOP_STR, strlen(ANC_CMD_STOP_STR)) == 0)
+    {
+        return ANC_CMD_STOP;
+    }
+
+    const char* delim[2] = ",";
+
+    if (strncmp(cmd, ANC_CMD_SET_GAINS_STR, strlen(ANC_CMD_SET_GAINS_STR)) == 0)
+    {
+        char* data_p = strchr(cmd, '=');
+        data_p++;
+
+        char* token;
+
+        /* get the first token */
+        token = strtok(data_p, delim);
+
+        int k = 0;
+        /* walk through other tokens */
+        while( token != NULL ) {
+            *(((int32_t*)cmdData) + k)
+                = (int32_t)strtol(token, (char **)NULL, 10);
+            k++;
+            if (k == 128 / sizeof(int32_t))
+            {
+                break;
+            }
+            token = strtok(NULL, delim);
+        }
+
+        *retCmdData = cmdData;
+
+        return ANC_CMD_SET_GAINS;
+    }
+
+    if (strncmp(cmd, ANC_CMD_IDENTIFICATION_STR, strlen(ANC_CMD_IDENTIFICATION_STR)) == 0)
+    {
+        return ANC_CMD_IDENTIFICATION;
+    }
+
+    return ANC_CMD_WRONG_CMD;
+}
+
+#endif /* ANC_CMD_H_ */

@@ -1,0 +1,3 @@
+medfilt.c:9:13:swap	24	static
+medfilt.c:22:6:medfilt	48	static
+medfilt.c:49:6:medfilt_init	32	static

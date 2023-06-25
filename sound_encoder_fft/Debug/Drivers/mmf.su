@@ -1,0 +1,4 @@
+mmf.c:16:8:mmf_init	4	static
+mmf.c:48:7:mmf_swap	16	static
+mmf.c:56:7:mmf_bubble_sort	24	static
+mmf.c:29:13:mmf_calculate	16	static

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;sound_encoder_fft/sound_encoder3.ioc&apos; to &apos;sound_encoder_fft.ioc&apos;" description="Rename resource &apos;sound_encoder3.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sound_encoder3.ioc" name="sound_encoder_fft.ioc" stamp="1568047305534" updateReferences="true"/>
+</session>

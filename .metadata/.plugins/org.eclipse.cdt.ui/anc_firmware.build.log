@@ -1,0 +1,10 @@
+13:52:03 **** Incremental Build of configuration Debug for project anc_firmware ****
+make -j4 all 
+arm-none-eabi-size   anc_firmware.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17392	    132	  65780	  83304	  14568	anc_firmware.elf
+Finished building: default.size.stdout
+ 
+
+13:52:04 Build Finished. 0 errors, 0 warnings. (took 618ms)
+
